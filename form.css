@@ -170,4 +170,7 @@ body{
 	.form :where(.gender-option,.gender){
 		row-gap: 15px;
 	}
+	.SWATcontainer{
+		grid-template-columns: 1fr;
+	}
 }
