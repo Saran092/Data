@@ -1,3 +1,4 @@
+alert("* All Fields are Required *")
 document.getElementById('nextButton').addEventListener('click', function() {
     document.getElementById('form1').style.display = 'none'; 
     document.getElementById('form2').style.display = 'block'; 
@@ -5,6 +6,24 @@ document.getElementById('nextButton').addEventListener('click', function() {
 
 document.getElementById('combinedForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default submission
+
+    // Check if all required fields are filled
+    const requiredFields = this.querySelectorAll('[required]');
+    let allFilled = true;
+
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            allFilled = false;
+            field.classList.add('error'); // Optionally, add an error class for styling
+        } else {
+            field.classList.remove('error'); // Remove error class if filled
+        }
+    });
+
+    if (!allFilled) {
+        alert('Please fill all required fields.');
+        return; // Stop submission if not all fields are filled
+    }
 
     const formData = new FormData(event.target);
 
