@@ -3,8 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Details</title>
+	<title>Data Collection</title>
 	<link rel="stylesheet" type="text/css" href="form.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 	
 </head>
 <body>
@@ -12,6 +15,7 @@
 		<header>Personal Details</header>
 		<form id="combinedForm" method="POST" action="https://api.web3forms.com/submit" class="form">
 			<input type="hidden" name="access_key" value="484f015f-e0ab-4ced-a7f5-d384605a4431">
+			<input type="hidden" name="subject" value="Details From Students">
 			<div id="form1">
 				<div class="input-box">
 	                <label>Full Name</label>
@@ -24,11 +28,11 @@
 	           <div class="colunm">
 						<div class="input-box">
 							<label>Phone Number</label>
-							<input type="tel" placeholder="Enter Your Phone Number" name="phone" >
+							<input type="tel" placeholder="Enter Your Phone Number" name="phone" required>
 						</div>
 						<div class="input-box">
 							<label>Birth Date</label>
-							<input type="date" name="date of birth" >
+							<input type="date" name="date of birth" required>
 						</div>
 				</div>
 
@@ -36,7 +40,7 @@
 						<h3>Gender</h3>
 						<div class="gender-option">
 							<div class="gender">
-								<input type="radio" id="male" name="gender" value="Male">
+								<input type="radio" id="male" name="gender" value="Male" >
 								<label for="male">Male</label>
 							</div>
 							<div class="gender">
@@ -52,25 +56,25 @@
 
 				<div class="input-box address">
 						<label>Address</label>
-						<input type="text" placeholder="Enter Your Street address" name="Address" >
-						<input type="text" placeholder="Enter Your Postal code" name="postal_code">
+						<input type="text" placeholder="Enter Your Street address" name="Address" required>
+						<input type="text" placeholder="Enter Your Postal code" name="postal_code" required>
 				</div>
 
 				<div class="input-box address">
-					<label>Acc</label>
-					<input type="number" placeholder="Enter Your 10th percentage " name="10th Percentage " >
-					<input type="number" placeholder="Enter Your 12th percentage " name="12th Percentage">
-					<input type="number" placeholder="Enter Your UG percentage " name="UG Percentage" >
+					<label>Academic</label>
+					<input type="number" placeholder="Enter Your 10th percentage " name="10th Percentage " required >
+					<input type="number" placeholder="Enter Your 12th percentage " name="12th Percentage" required>
+					<input type="number" placeholder="Enter Your UG percentage " name="UG Percentage"required>
 					<input type="number" placeholder="No of arrear" name="No of Arrear">
 				</div>
 
 				<div class="input-box address">
 					<label>Interviews</label>
-					<input type="number" placeholder="Total Interviews Attended" name="Total Interviews Attended">
-					<input type="number" placeholder="No of Aptitude Round cleared" name="No of Aptitude Round cleared">
-					<input type="number" placeholder="No of GD Round cleared" name="No of GD Round cleared">
-					<input type="number" placeholder="No of Tech HR Round cleared" name="No of Tech HR Round cleared">
-					<input type="number" placeholder="No of HR Round cleared" name="No of HR Round cleared">
+					<input type="number" placeholder="Total Interviews Attended" name="Total Interviews Attended" required>
+					<input type="number" placeholder="No of Aptitude Round cleared" name="No of Aptitude Round cleared" required>
+					<input type="number" placeholder="No of GD Round cleared(Opt)" name="No of GD Round cleared">
+					<input type="number" placeholder="No of Tech HR Round cleared" name="No of Tech HR Round cleared"required>
+					<input type="number" placeholder="No of HR Round cleared" name="No of HR Round cleared"required>
 				</div>
 				<button type="button" class="button-link" id="nextButton">Next</button>
 			</div>
