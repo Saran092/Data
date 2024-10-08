@@ -3,6 +3,10 @@ document.getElementById('nextButton').addEventListener('click', function() {
     document.getElementById('form1').style.display = 'none'; 
     document.getElementById('form2').style.display = 'block'; 
 });
+document.getElementById('backButton').addEventListener('click', function() {
+    document.getElementById('form1').style.display = 'block'; 
+    document.getElementById('form2').style.display = 'none'; 
+});
 
 document.getElementById('combinedForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default submission

@@ -38,6 +38,10 @@ body{
 .input-box label{
 	color: white;
 }
+.input-box input.error {
+    border: 2px solid red; /* Change this to your preferred error style */
+}
+
 .form  :where(.input-box input, .select-box){
 	position: relative;
 	width: 100%;
@@ -137,6 +141,7 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	gap: 10px;
 }
 .submit{
 	background-color: white;
