@@ -42,7 +42,7 @@ document.getElementById('combinedForm').addEventListener('submit', function(even
     loadingSpinner.style.display = 'block';
 
     // Send combined data to Google Apps Script
-    fetch('https://script.google.com/u/0/home/projects/1m_D3-TXCAyWRYAirReFaPsDLoqi8oW7HboTeLqBks4rGuIONN0OAkyHO/edit', { // Replace with your Google Apps Script URL
+    fetch('https://script.google.com/macros/s/AKfycbwYbqWkyNd_2h8XvSAIYI36Q3QkHZ77fu-DpOYGvx63gXem-l8zWveVXdO97hcxkf6Mnw/exec', { // Replace with your Google Apps Script URL
         method: 'POST',
         body: formData, 
     })
