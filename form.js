@@ -20,15 +20,15 @@ document.getElementById('combinedForm').addEventListener('submit', function(even
     requiredFields.forEach(field => {
         if (!field.value.trim()) {
             allFilled = false;
-            field.classList.add('error'); // Optionally, add an error class for styling
+            field.classList.add('error'); 
         } else {
-            field.classList.remove('error'); // Remove error class if filled
+            field.classList.remove('error'); 
         }
     });
 
     if (!allFilled) {
         alert('Please fill all required fields.');
-        return; // Stop submission if not all fields are filled
+        return;
     }
 
     const formData = new FormData(event.target);
@@ -41,11 +41,10 @@ document.getElementById('combinedForm').addEventListener('submit', function(even
     const loadingSpinner = document.getElementById('loadingSpinner');
     loadingSpinner.style.display = 'block';
 
-    // Send combined data to Web3Forms
-    fetch('https://api.web3forms.com/submit', {
+    // Send combined data to Google Apps Script
+    fetch('https://script.google.com/u/0/home/projects/1m_D3-TXCAyWRYAirReFaPsDLoqi8oW7HboTeLqBks4rGuIONN0OAkyHO/edit', { // Replace with your Google Apps Script URL
         method: 'POST',
-        mode: 'no-cors', // Use no-cors mode
-        body: new URLSearchParams(formData), // Use URLSearchParams for form submission
+        body: formData, 
     })
     .then(() => {
         // Alert the user that the submission is complete
@@ -58,6 +57,6 @@ document.getElementById('combinedForm').addEventListener('submit', function(even
     .finally(() => {
         // Re-enable the submit button and hide loading spinner
         submitButton.disabled = false;
-        loadingSpinner.style.display = 'none'; // Hide the spinner
+        loadingSpinner.style.display = 'none'; 
     });
 });
