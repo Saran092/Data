@@ -1,8 +1,10 @@
-alert("* All Fields are Required *")
+alert("* All Fields are Required *");
+
 document.getElementById('nextButton').addEventListener('click', function() {
     document.getElementById('form1').style.display = 'none'; 
     document.getElementById('form2').style.display = 'block'; 
 });
+
 document.getElementById('backButton').addEventListener('click', function() {
     document.getElementById('form1').style.display = 'block'; 
     document.getElementById('form2').style.display = 'none'; 
@@ -31,6 +33,14 @@ document.getElementById('combinedForm').addEventListener('submit', function(even
 
     const formData = new FormData(event.target);
 
+    // Disable the submit button to prevent multiple submissions
+    const submitButton = document.getElementById('submitButton');
+    submitButton.disabled = true;
+
+    // Show loading spinner
+    const loadingSpinner = document.getElementById('loadingSpinner');
+    loadingSpinner.style.display = 'block';
+
     // Send combined data to Web3Forms
     fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -44,5 +54,10 @@ document.getElementById('combinedForm').addEventListener('submit', function(even
     .catch(error => {
         console.error('Error:', error);
         alert('There was an error submitting the form. Please try again.');
+    })
+    .finally(() => {
+        // Re-enable the submit button and hide loading spinner
+        submitButton.disabled = false;
+        loadingSpinner.style.display = 'none'; // Hide the spinner
     });
 });

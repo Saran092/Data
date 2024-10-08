@@ -151,6 +151,16 @@ body{
 	border-radius: 20px;
 	border: 1px solid white;
 }
+#loadingSpinner {
+    display: none; /* Hide by default */
+    position: absolute; /* Position it appropriately */
+    top: 50%; /* Center it vertically */
+    left: 50%; /* Center it horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    font-size: 1.5em; /* Adjust size */
+    color: #007BFF; /* Spinner color */
+    z-index: 1000; /* Ensure it’s above other elements */
+}
 
 
 
